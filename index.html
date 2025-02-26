@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Bulan Suci Ramadhan</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            overflow-x: hidden;
+        }
+        .header {
+            background: #2c6b2f; /* Hijau khas Ramadhan */
+            color: #f5e400; /* Emas */
+            text-align: center;
+            padding: 8px;
+            font-size: 1.6em; /* Ukuran font lebih kecil agar pas di mobile */
+            font-weight: bold;
+            border-bottom: 2px solid #f5e400;
+            position: relative;
+            height: 80px; /* Ukuran header lebih kecil */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Georgia', serif;
+        }
+        .header-text {
+            display: inline-block;
+            padding: 0 5px; /* Menjaga jarak antar teks dan emoji */
+        }
+        .masjid-left, .masjid-right {
+            position: absolute;
+            top: 50%; /* Mengatur posisi atas agar sejajar dengan tengah header */
+            transform: translateY(-50%); /* Mengatur agar berada tepat di tengah secara vertikal */
+            font-size: 1.6em; /* Ukuran emoji masjid disesuaikan */
+            color: #f5e400;
+        }
+        .masjid-left {
+            left: 5px; /* Posisikan masjid di kiri */
+        }
+        .masjid-right {
+            right: 5px; /* Posisikan masjid di kanan */
+        }
+        .content {
+            text-align: center;
+            margin-top: 15px;
+            padding: 8px;
+        }
+		.highlighted-message {
+			background-color: #555; /* Kuning emas */
+			color: white; /* Warna teks hitam */
+			font-weight: bold;
+			padding: 15px;
+			border-radius: 8px;
+			text-align: center;
+			margin-bottom: 10px; /* Beri jarak ke bawah */
+		}
+
+		.no-background {
+			background: none; /* Tanpa warna latar */
+			color: #333; /* Warna teks tetap terlihat */
+			text-align: center;
+		}
+        .lamp {
+            font-size: 2.2em; /* Ukuran lampu lebih kecil */
+            color: #f5e400;
+            margin-top: 10px;
+        }
+        .button-container {
+            margin-top: 15px;
+            opacity: 0;
+            animation: fadeIn 3s 1s forwards;
+        }
+        .enter-button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #f5e400;
+            color: #333;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+        .enter-button:hover {
+            background-color: #c8a800;
+            transform: scale(1.05); /* Efek pembesaran tombol saat hover */
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1em;
+            color: #333;
+            padding: 5px;
+        }
+
+        /* Konten tambahan setelah tombol diklik */
+        .ramadhan-info {
+            display: none;
+            font-size: 1.1em; /* Ukuran font disesuaikan lebih kecil */
+            background-color: #00796b;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+
+        /* Animasi fade-in */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Media Query untuk tampilan mobile */
+        @media (max-width: 768px) {
+            .header {
+                font-size: 1.4em; /* Menyesuaikan ukuran font header */
+                height: auto;
+                padding: 8px;
+            }
+            .masjid-left, .masjid-right {
+                font-size: 1.6em; /* Menyesuaikan ukuran emoji masjid */
+            }
+            .message {
+                font-size: 1.1em;
+                width: 90%;
+                padding: 12px;
+            }
+            .lamp {
+                font-size: 2em;
+            }
+            .enter-button {
+                padding: 8px 15px;
+                font-size: 1em;
+            }
+            .footer {
+                font-size: 0.9em;
+                padding: 8px;
+            }
+        }
+
+        /* Media Query untuk tampilan lebih kecil (mobile portrait) */
+        @media (max-width: 480px) {
+            .header {
+                font-size: 1.3em;
+                padding: 8px;
+            }
+            .masjid-left, .masjid-right {
+                font-size: 1.4em; /* Menyesuaikan ukuran emoji masjid */
+            }
+            .message {
+                font-size: 1em;
+                padding: 10px;
+                width: 95%;
+            }
+            .lamp {
+                font-size: 1.8em;
+            }
+            .enter-button {
+                padding: 8px 15px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Musik Latar dari Link MP3, autoplay tanpa kontrol -->
+    <audio autoplay loop>
+        <source src="https://link-to-your-music-file.com/lagu-ramadhan.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="header">
+        <span class="masjid-left">🕌</span>
+        <span class="header-text">Ramadhan Mubarak</span>
+        <span class="masjid-right">🕌</span>
+    </div>
+    <div class="content">
+		<div class="message highlighted-message">
+			Marhaban Ya Ramadhan !
+		</div>
+
+		<div class="message no-background">
+			Selamat Menunaikan Ibadah Puasa di Bulan Suci Ramadhan! Semoga kita semua diberikan kesehatan dan keberkahan.
+		</div>
+        <div class="lamp">
+            🌙
+        </div>
+        
+        <!-- Tombol pertama -->
+        <div class="button-container" id="button1">
+            <button class="enter-button" id="enterButton1">Klik untuk melanjutkan</button>
+        </div>
+        
+        <!-- Konten tambahan setelah tombol pertama diklik -->
+        <div class="ramadhan-info" id="ramadhanInfo1">
+            <h3>Selamat Menyambut Bulan Suci Ramadhan</h3>
+            <p>Semoga bulan yang penuh berkah ini menjadi momentum untuk kita semua dalam memperbaiki diri, mendekatkan diri kepada Allah SWT, dan menjadi pribadi yang lebih baik. Ramadhan adalah waktu yang tepat untuk membersihkan jiwa, memperbanyak ibadah, dan berbagi dengan sesama. Dalam setiap detik yang kita lewati di bulan suci ini penuh dengan keberkahan dan kita bisa meraih ampunan serta pahala yang berlipat ganda. Selamat menjalankan ibadah puasa, semoga Allah selalu memberikan kita kekuatan dan ketabahan🙏</p>.</p>
+        </div>
+
+        <!-- Tombol kedua -->
+        <div class="button-container" id="button2" style="display:none;">
+            <button class="enter-button" id="enterButton2">Lanjutkan</button>
+        </div>
+
+        <!-- Konten tambahan setelah tombol kedua diklik -->
+        <div class="ramadhan-info" id="ramadhanInfo2" style="display:none;">
+            <h3>Ramadhan 2025: Sebuah Perjalanan Spiritual</h3>
+            <p>Bulan Ramadhan pada tahun 2025 membawa makna yang lebih dalam dalam kehidupan setiap Muslim. Ini adalah waktu yang penuh berkah untuk memperdalam hubungan dengan Allah, memperbanyak ibadah, dan berbagi dengan sesama. Di tahun ini, kita juga diajak untuk lebih bersyukur atas segala nikmat yang kita terima dan memperbanyak doa agar Ramadhan kita penuh dengan keberkahan dan ampunan. Selamat menjalankan ibadah puasa, semoga kita diberikan kekuatan dan ketabahan dalam menjalani bulan suci ini.</p>
+        </div>
+
+        <!-- Tombol ketiga -->
+        <div class="button-container" id="button3" style="display:none;">
+            <button class="enter-button" id="enterButton3">Lanjutkan</button>
+        </div>
+
+        <!-- Konten tambahan setelah tombol ketiga diklik -->
+        <div class="ramadhan-info" id="ramadhanInfo3" style="display:none;">
+            <h3>Ramadhan: Saatnya Merenung dan Berbagi</h3>
+            <p>Ramadhan bukan hanya sekadar menahan lapar dan dahaga, tetapi juga momen untuk memperbaiki diri dan memperbanyak amal ibadah. Ini adalah saat yang tepat untuk merenung, memohon ampunan, dan berbagi kebahagiaan dengan sesama. Dalam setiap detik yang berlalu, kita dipanggil untuk meraih pahala sebanyak-banyaknya dan memperdalam makna hidup dalam keberkahan bulan suci iniRamadhan bukan hanya tentang berpuasa, tetapi juga tentang kesabaran, keikhlasan, dan meningkatkan ibadah. Semoga kita bisa mengambil hikmah dari bulan suci ini. </p>
+        </div>
+		
+		<!-- Tombol keempat (Awalnya disembunyikan) -->
+		<div class="button-container" id="button4" style="display:none;">
+			<button class="enter-button" id="enterButton4">Lanjutkan</button>
+		</div>
+
+		<!-- Konten keempat (Awalnya disembunyikan) -->
+		<div class="ramadhan-info" id="ramadhanInfo4" style="display:none;">
+			<h3>Pesan</h3>
+			<p>Jangan lupa berburu takjil dan ngabuburit😊</p>
+		</div>
+        
+    </div>
+
+    <div class="footer">
+        <p>Semoga segala amal ibadah kita diterima dan membawa kedamaian. Aamiin.</p>
+		<!-- Bagian Sosial Media -->
+<div class="social-media" style="text-align: center; margin-top: 20px;">
+    <h3>Ikuti Kami di Sosial Media</h3>
+    <a href="https://www.instagram.com/nezuro_cj?igsh=azE0MDhwY2N1NDk0" target="_blank" style="text-decoration: none; margin: 0 10px;">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" width="40">
+    </a>
+    <a href="https://www.tiktok.com/@nezz.noc?_t=ZS-8uETyyXW144&_r=1" target="_blank" style="text-decoration: none; margin: 0 10px;">
+        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046124.png" alt="TikTok" width="40">
+    </a>
+</div>
+        <p>&copy; 2025 Nezuro. Semua hak cipta dilindungi.</p>
+    </div>
+
+    <script>
+        // Tombol pertama untuk menampilkan konten pertama
+        const enterButton1 = document.getElementById("enterButton1");
+        const ramadhanInfo1 = document.getElementById("ramadhanInfo1");
+        const button2 = document.getElementById("button2");
+
+        enterButton1.addEventListener("click", function() {
+            ramadhanInfo1.style.display = "block";  // Menampilkan konten pertama setelah tombol pertama diklik
+            enterButton1.style.display = "none";  // Menyembunyikan tombol pertama
+            button2.style.display = "block";  // Menampilkan tombol kedua
+        });
+
+        // Tombol kedua untuk menampilkan konten kedua
+        const enterButton2 = document.getElementById("enterButton2");
+        const ramadhanInfo2 = document.getElementById("ramadhanInfo2");
+        const button3 = document.getElementById("button3");
+
+        enterButton2.addEventListener("click", function() {
+            ramadhanInfo2.style.display = "block";  // Menampilkan konten kedua setelah tombol kedua diklik
+            enterButton2.style.display = "none";  // Menyembunyikan tombol kedua
+            button3.style.display = "block";  // Menampilkan tombol ketiga
+        });
+
+        // Tombol ketiga untuk menampilkan konten ketiga
+        const enterButton3 = document.getElementById("enterButton3");
+        const ramadhanInfo3 = document.getElementById("ramadhanInfo3");
+
+        enterButton3.addEventListener("click", function() {
+            ramadhanInfo3.style.display = "block";  // Menampilkan konten ketiga setelah tombol ketiga diklik
+            enterButton3.style.display = "none";  // Menyembunyikan tombol ketiga
+		});
+        // Tombol keempat untuk menampilkan konten keempat
+		const enterButton4 = document.getElementById("enterButton4");
+		const ramadhanInfo4 = document.getElementById("ramadhanInfo4");
+
+		enterButton3.addEventListener("click", function() {
+			button4.style.display = "block";  // Menampilkan tombol keempat setelah tombol ketiga diklik
+		});
+
+		enterButton4.addEventListener("click", function() {
+			ramadhanInfo4.style.display = "block";  // Menampilkan konten keempat setelah tombol keempat diklik
+			enterButton4.style.display = "none";  // Menyembunyikan tombol keempat setelah diklik
+		});
+    </script>
+</body>
+</html>
